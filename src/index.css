@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #05070b;
+  color: #e7ecff;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #05070b;
+}
+::-webkit-scrollbar-thumb {
+  background: #182246;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4c6fff;
+}
+
+/* section grid backdrop, sits above the three.js canvas */
+.grid-overlay {
+  background-image: linear-gradient(180deg, rgba(76, 111, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(76, 111, 255, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.text-gradient {
+  background: linear-gradient(120deg, #4c6fff 0%, #22d3ee 60%, #7c5cfc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
